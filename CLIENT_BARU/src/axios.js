@@ -1,6 +1,6 @@
-import axios from "axios"
+import axios from "axios";
 
 export const makeRequest = axios.create({
-    baseURL:"http://localhost:8800/API/",
-    withCredentials: true,
+  baseURL: "http://localhost:8800/API/",
+  withCredentials: true,
 });
