@@ -27,7 +27,7 @@ export const register = (req, res) => {
 
     db.query(q, [values], (err, data) => {
       if (err) return res.status(500).json(err);
-      return res.status(200).json("User berhasil dibuat");
+      return res.status(200).json("User Berhasil dibuat");
     });
   });
 };
