@@ -2,28 +2,26 @@ name: CD
 
 on:
   push:
-    branches: [ "main" ]
-    
+    branches: ["main"]
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Deploy using ssh
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PASSWORD }}
-        port: 22
-        script: |
-          cd ~/apps
-          git pull origin main
-          git status
-          git install -only=prod
-          export NVM_DIR=~/.nvm
-          source ~/.nvm/nvm.sh
-          pm2 restart CULINERIA
+      - uses: actions/checkout@v3
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd /apps
+            git pull origin main
+            git status
+            git install -only=prod
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            pm2 restart CULINERIA
