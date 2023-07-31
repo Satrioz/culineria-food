@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.PASSWORD }}
           port: 22
           script: |
-            cd /apps
+            cd ~/apps/culineria-food
             git pull origin main
             git status
             git install -only=prod
