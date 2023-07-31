@@ -31,7 +31,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span>CULINERIA</span>
+          <span>CULINERIAA</span>
         </Link>
         <HomeOutlinedIcon />
         {darkMode ? (
