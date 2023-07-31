@@ -19,9 +19,9 @@ jobs:
           port: 22
           script: |
             cd ~/apps/culineria-food/src
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             git pull origin main
             git status
             git install -only=prod
-            export NVM_DIR=~/.nvm
-            source ~/.nvm/nvm.sh
             pm2 restart CULINERIA
